@@ -6,7 +6,7 @@
 <h3>使用方法</h3>
 <ol>
 <li>加载jQuery库 (需<strong>1.4+</strong>)</li>
-<li>加载<code>jQuery.Waterfull.js</code> , 必须在jQuery库之后;</li>
+<li>加载<code>jQuery.waterfull.min.js</code> , 必须在jQuery库之后;</li>
 <li>调用接口: <code>$node.waterfall({/* 此处为设置选项, 可留空 */})</code><br>
 如: <code>$('#container').waterfall({})</code>
 </li>
