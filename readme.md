@@ -1,28 +1,28 @@
-<h3>WaterfallÊÇjQueryÁ÷Ìå²¼¾Ö²å¼ş</h3>
+ï»¿<h3>Waterfallæ˜¯jQueryæµä½“å¸ƒå±€æ’ä»¶</h3>
 <ul>
-<li>µ±Ç°°æ±¾: 1.0.4<br /></li>
-<li>¸üĞÂÊ±¼ä: 2012.2.4</li>
+<li>å½“å‰ç‰ˆæœ¬: 1.0.4<br /></li>
+<li>æ›´æ–°æ—¶é—´: 2012.2.4</li>
 </ul>
-<h3>Ê¹ÓÃ·½·¨</h3>
+<h3>ä½¿ç”¨æ–¹æ³•</h3>
 <ol>
-<li>¼ÓÔØjQuery¿â (Ğè<strong>1.4+</strong>)</li>
-<li>¼ÓÔØ<code>jQuery.Waterfull.js</code> , ±ØĞëÔÚjQuery¿âÖ®ºó;</li>
-<li>µ÷ÓÃ½Ó¿Ú: <code>$node.waterfall({/* ´Ë´¦ÎªÉèÖÃÑ¡Ïî, ¿ÉÁô¿Õ */})</code><br>
-Èç: <code>$('#container').waterfall({})</code>
+<li>åŠ è½½jQueryåº“ (éœ€<strong>1.4+</strong>)</li>
+<li>åŠ è½½<code>jQuery.Waterfull.js</code> , å¿…é¡»åœ¨jQueryåº“ä¹‹å;</li>
+<li>è°ƒç”¨æ¥å£: <code>$node.waterfall({/* æ­¤å¤„ä¸ºè®¾ç½®é€‰é¡¹, å¯ç•™ç©º */})</code><br>
+å¦‚: <code>$('#container').waterfall({})</code>
 </li>
 </ol>
-<h3>ÉèÖÃÑ¡Ïî</h3>
+<h3>è®¾ç½®é€‰é¡¹</h3>
 <div class="highlight">
 <pre><span class="p">{</span>
-    <span class="nx">itemSelector</span><span class="o">:</span><span class="mf">'.post-home'</span><span class="p">,</span>     <span class="c1">//×ÓÔªËØid/class, ¿ÉÁô¿Õ</span>
-    <span class="nx">columnCount</span><span class="o">:</span><span class="mi">4</span><span class="p">,</span>         <span class="c1">// ÁĞÊı,  ´¿Êı×Ö, ¿ÉÁô¿Õ</span>
-    <span class="nx">columnWidth</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>       <span class="c1">// ÁĞ¿í¶È, ´¿Êı×Ö, ¿ÉÁô¿Õ</span>
-    <span class="nx">isResizable</span><span class="o">:</span><span class="mi">false</span><span class="p">,</span>       <span class="c1">// ×ÔÊÊÓ¦ä¯ÀÀÆ÷¿í¶È, Ä¬ÈÏfalse</span>
-    <span class="nx">isAnimated</span><span class="o">:</span><span class="s1">false</span><span class="p">,</span>    <span class="c1">// ÔªËØ¶¯»­, Ä¬ÈÏfalse</span>
-    <span class="nx">Duration</span><span class="o">:</span><span class="s1">500</span><span class="p">,</span>    <span class="c1">// ¶¯»­Ê±¼ä</span>
-    <span class="nx">Easing</span><span class="o">:</span><span class="s1">'swing'</span><span class="p">,</span>    <span class="c1">// ¶¯»­Ğ§¹û, ÅäºÏ jQuery Easing Plugin Ê¹ÓÃ</span>
-    <span class="nx">endFn</span><span class="o">:</span><span class="s1">function(){}</span><span class="p">,</span>    <span class="c1">// »Øµ÷º¯Êı</span><span class="p">}</span>
+    <span class="nx">itemSelector</span><span class="o">:</span><span class="mf">'.post-home'</span><span class="p">,</span>     <span class="c1">//å­å…ƒç´ id/class, å¯ç•™ç©º</span>
+    <span class="nx">columnCount</span><span class="o">:</span><span class="mi">4</span><span class="p">,</span>         <span class="c1">// åˆ—æ•°,  çº¯æ•°å­—, å¯ç•™ç©º</span>
+    <span class="nx">columnWidth</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>       <span class="c1">// åˆ—å®½åº¦, çº¯æ•°å­—, å¯ç•™ç©º</span>
+    <span class="nx">isResizable</span><span class="o">:</span><span class="mi">false</span><span class="p">,</span>       <span class="c1">// è‡ªé€‚åº”æµè§ˆå™¨å®½åº¦, é»˜è®¤false</span>
+    <span class="nx">isAnimated</span><span class="o">:</span><span class="s1">false</span><span class="p">,</span>    <span class="c1">// å…ƒç´ åŠ¨ç”», é»˜è®¤false</span>
+    <span class="nx">Duration</span><span class="o">:</span><span class="s1">500</span><span class="p">,</span>    <span class="c1">// åŠ¨ç”»æ—¶é—´</span>
+    <span class="nx">Easing</span><span class="o">:</span><span class="s1">'swing'</span><span class="p">,</span>    <span class="c1">// åŠ¨ç”»æ•ˆæœ, é…åˆ jQuery Easing Plugin ä½¿ç”¨</span>
+    <span class="nx">endFn</span><span class="o">:</span><span class="s1">function(){}</span><span class="p">,</span>    <span class="c1">// å›è°ƒå‡½æ•°</span><span class="p">}</span>
 </pre>
 </div>
-<p>Èç¹ûÄã¶ÔÕâ¸ö²å¼ş¸ĞĞËÈ¤, ¾´Çë¹Ø×¢:<br /><a href="http://mufeng.me">×÷ÕßµÄ²©¿Í</a><br /><a href="http://mufeng.me/waterfall.html">²å¼ş·¢²¼Ò³</a><br /></p>
-<p>¸ĞĞ»ÄãµÄÖ§³ÖÓë·´À¡ :)<br />×÷Õß: <a href="http://mufeng.me">MuFeng</a></p>
+<p>å¦‚æœä½ å¯¹è¿™ä¸ªæ’ä»¶æ„Ÿå…´è¶£, æ•¬è¯·å…³æ³¨:<br /><a href="http://mufeng.me">ä½œè€…çš„åšå®¢</a><br /><a href="http://mufeng.me/waterfall.html">æ’ä»¶å‘å¸ƒé¡µ</a><br /></p>
+<p>æ„Ÿè°¢ä½ çš„æ”¯æŒä¸åé¦ˆ :)<br />ä½œè€…: <a href="http://mufeng.me">MuFeng</a></p>
