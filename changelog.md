@@ -1,12 +1,14 @@
 ﻿<h2>phZoom 更新历史</h2>
 
-<p>2012.1.30 | 1.0.4<br>
-1. 删除<code>isAppend</code>选项</p>
+<p>2012.2.5 | 1.0.5<br>
+1. 修复<code>jQuery1.4</code>以上版本的兼容性;<br>
+2. 修改<code>animate</code>的触发方式</p>
 
-<p>2012.1.30 | 1.0.2<br>
-1. 修改不能获取图片制定的<code>maxWidth</code>的bug</p>
+<p>2012.2.3 | 1.0.4<br>
+1. 删除<code>isAppend</code>选项<br>
+2. 修改不能获取图片制定的<code>maxWidth</code>的bug</p>
 
-<p>2012.1.30 | 1.0.1<br>
+<p>2012.2.1 | 1.0.2<br>
 1. 小幅修改</p>
 
 <p>2012.1.30 | 1.0.0<br>

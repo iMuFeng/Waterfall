@@ -1,8 +1,8 @@
 ﻿/**
  * @name jQuery waterfall Plugin
- * @version 1.0.4
+ * @version 1.0.5
  * @create 2012.1.30
- * @lastmodified 2012.2.4
+ * @lastmodified 2012.2.5
  * @description Based on jQuery 1.4+
  * @author MuFeng (http://mufeng.me)
  * @url http://mufeng.me/waterfall.html
@@ -23,7 +23,7 @@ Water.prototype={
 	init:function(){
 		this.initArg();
 		this.reSize();
-		this.layout(this.bricks);
+		this.layout(this.getBricks(this.element));
 	},
 	// 获取子元素
 	getBricks: function( $elems ) {
@@ -32,8 +32,7 @@ Water.prototype={
     },
 	// 获取相关参数, this.bricks:子元素集合, w:单个子元素宽度, n:列数
 	getSize:function(){
-		this.bricks = this.getBricks(this.element);
-		var	that = this.bricks[0],
+		var	that = this.getBricks(this.element)[0],
 			$that = $(that),
 			columnCount = this.options.columnCount,
 			columnWidth = this.options.columnWidth,
@@ -95,7 +94,7 @@ Water.prototype={
 						} ! d.length && c()
 					},
 					c = function() {
-						clearInterval(e);
+						clearTimeout(e);
 						e = null
 					};
 					return function(f, k, j, x) {
@@ -131,7 +130,7 @@ Water.prototype={
 						if (!E.end) {
 							d.push(E);
 							if (e === null) {
-								e = setInterval(b, 40)
+								e = setTimeout(b,50)
 							}
 						}
 					}
@@ -172,18 +171,18 @@ Water.prototype={
 										position:'absolute',
 										left:0,
 										top:heightMax
-									}).animate({
+									}).stop().animate({
 									left:k*w,
 									top:wholeArg[k]
 									},
 									{
 										duration:dura, 
-										easing:ease				
+										easing:ease
 									})
 								);
 								wholeArg[k]+=hplus;
 								i++;
-								t = setTimeout(sort, 10)
+								t = setTimeout(sort, 50)
 							});
 						}else{
 							var heightMax = Math.max.apply( Math,wholeArg);
@@ -201,13 +200,13 @@ Water.prototype={
 										position:'absolute',
 										left:0,
 										top:heightMax
-									}).animate({
+									}).stop().animate({
 									left:k*w,
 									top:wholeArg[k]
 									},
 									{
 										duration:dura, 
-										easing:ease				
+										easing:ease										
 									})
 								);
 								wholeArg[k]+=hplus;
@@ -250,7 +249,7 @@ $.waterfall=function(x,y){
 		Easing: "swing",
 		endFn: function(){}
 	},x);
-	$.data('waterfall', new Water(x,y));
+	$.data(y,'waterfall', new Water(x,y));
 	return y;
 };
 $.fn.waterfall=function(x){
