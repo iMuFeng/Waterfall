@@ -1,5 +1,8 @@
 ﻿<h2>Waterfall 更新历史</h2>
 
+<p>2012.2.11 | 1.0.6<br>
+1. 修复<code>Chrome</code>下,排列错位的问题;</p>
+
 <p>2012.2.5 | 1.0.5<br>
 1. 修复<code>jQuery1.4</code>以上版本的兼容性;<br>
 2. 修改<code>animate</code>的触发方式</p>

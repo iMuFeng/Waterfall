@@ -1,8 +1,8 @@
 ﻿/**
  * @name jQuery waterfall Plugin
- * @version 1.0.5
+ * @version 1.0.6
  * @create 2012.1.30
- * @lastmodified 2012.2.5
+ * @lastmodified 2012.2.11
  * @description Based on jQuery 1.4+
  * @author MuFeng (http://mufeng.me)
  * @url http://mufeng.me/waterfall.html
@@ -84,57 +84,76 @@ Water.prototype={
 					-parseInt($imgA.css('margin-left')) - parseInt($imgA.css('margin-right'));
 		$bricks.css('display','none');
 		// imgReady方法
-		var imgReady = (function() {
-					var d = [],
-					e = null,
-					b = function() {
-						var f = 0;
-						for (; f < d.length; f++) {
-							d[f].end ? d.splice(f--, 1) : d[f]()
-						} ! d.length && c()
-					},
-					c = function() {
-						clearTimeout(e);
-						e = null
-					};
-					return function(f, k, j, x) {
-						var E, F, h, C, g, D = new Image();
-						D.src = f;
-						if (D.complete) {
-							k(D.width, D.height);
-							j && j(D.width, D.height);
-							return
-						}
-						F = D.width;
-						h = D.height;
-						E = function() {
-							C = D.width;
-							g = D.height;
-							if (C !== F || g !== h || C * g > 1024) {
-								k(C, g);
-								E.end = true
-							}
-						};
-						E();
-						D.onerror = function() {
-							x && x();
-							C=0;g=0;
-							k(C, g);
-							E.end = true;
-							D = D.onload = D.onerror = null
-						};
-						D.onload = function() {
-							j && j(D.width, D.height); ! E.end && E();
-							D = D.onload = D.onerror = null
-						};
-						if (!E.end) {
-							d.push(E);
-							if (e === null) {
-								e = setTimeout(b,50)
-							}
-						}
-					}
-				})();
+	var imgReady = (function () {
+		var list = [], intervalId = null,
+
+		// 用来执行队列
+		tick = function () {
+			var i = 0;
+			for (; i < list.length; i++) {
+				list[i].end ? list.splice(i--, 1) : list[i]();
+			};
+			!list.length && stop();
+		},
+
+		// 停止所有定时器队列
+		stop = function () {
+			clearTimeout(intervalId);
+			intervalId = null;
+		};
+
+		return function (url, ready, load, error) {
+			var check, width, height, newWidth, newHeight,
+				img = new Image();
+			
+			img.src = url;
+
+			// 如果图片被缓存，则直接返回缓存数据
+			if (img.complete) {
+				ready(img.width, img.height);
+				load && load(img.width, img.height);
+				return;
+			};
+			
+			// 检测图片大小的改变
+			width = img.width;
+			height = img.height;
+			check = function () {
+				newWidth = img.width;
+				newHeight = img.height;
+				if (newWidth !== width || newHeight !== height ||
+					// 如果图片已经在其他地方加载可使用面积检测
+					newWidth * newHeight > 1024
+				) {
+					ready(newWidth, newHeight);
+					check.end = true;
+				};
+			};
+			check();
+			
+			// 加载错误后的事件
+			img.onerror = function () {
+				error && error();
+				check.end = true;
+				img = img.onload = img.onerror = null;
+			};
+			
+			// 完全加载完毕的事件
+			img.onload = function () {
+				load && load(img.width, img.height);
+				!check.end && check();
+				// IE gif动画会循环执行onload，置空onload即可
+				img = img.onload = img.onerror = null;
+			};
+
+			// 加入队列中定期执行
+			if (!check.end) {
+				list.push(check);
+				// 无论何时只允许出现一个定时器，减少浏览器性能损耗
+				if (intervalId === null) intervalId = setTimeout(tick, 50);
+			};
+		};
+	})();
 			sort();
 			// 重排函数
 			function sort(){
@@ -151,8 +170,7 @@ Water.prototype={
 								iy = iy ? iy:0;
 								y = iy * maxWidth / ix ;
 								ix = maxWidth;
-								$img.attr({
-										src:isrc,
+								$img.attr('src',isrc).css({
 										width:ix,
 										height:iy
 								});
@@ -176,8 +194,8 @@ Water.prototype={
 									top:wholeArg[k]
 									},
 									{
-										duration:dura, 
-										easing:ease
+										Duration:dura, 
+										Easing:ease
 									})
 								);
 								wholeArg[k]+=hplus;
@@ -205,8 +223,8 @@ Water.prototype={
 									top:wholeArg[k]
 									},
 									{
-										duration:dura, 
-										easing:ease										
+										Duration:dura, 
+										Easing:ease										
 									})
 								);
 								wholeArg[k]+=hplus;
