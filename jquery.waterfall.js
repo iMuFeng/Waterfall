@@ -134,6 +134,8 @@ Water.prototype={
 			// 加载错误后的事件
 			img.onerror = function () {
 				error && error();
+				newWidth = newHeight = 0;
+				ready(newWidth, newHeight);
 				check.end = true;
 				img = img.onload = img.onerror = null;
 			};
