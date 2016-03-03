@@ -7,7 +7,7 @@
  * @author MuFeng (http://mufeng.me)
  * @url http://mufeng.me/waterfall.html
  **/
-~function($){
+;function($){
 /**
  *
  * @param array: 全局数组,储存参数
@@ -104,4 +104,4 @@ $.waterfall=function(x,y){
 $.fn.waterfall=function(x){
 	return $.waterfall(x,this);
 };
-}(jQuery);
+}(window.jQuery);

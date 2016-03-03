@@ -1,0 +1,20 @@
+{
+  "name": "jquery-waterfall",
+  "version": "1.0.7",
+  "description": "jQuery waterfall Plugin",
+  "main": "js/jquery.waterfall.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMuFeng/Waterfall.git"
+  },
+  "keywords": [
+    "jquery",
+    "waterfall"
+  ],
+  "author": "Mufeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iMuFeng/Waterfall/issues"
+  },
+  "homepage": "https://github.com/iMuFeng/Waterfall#readme"
+}
