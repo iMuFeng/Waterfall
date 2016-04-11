@@ -11,7 +11,7 @@ npm install jquery-waterfall --save
 ###使用方法
 ```
 var $ = require('jquery');
-require('jquery-waterfall');
+var waterfall = require('jquery-waterfall');
 
 $node.waterfall({/* 此处为设置选项, 可留空 */})
 ```
