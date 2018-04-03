@@ -1,3 +1,4 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/iMuFeng/Waterfall.png?columns=all)](https://waffle.io/iMuFeng/Waterfall?utm_source=badge)
 ##Waterfall 是流体布局 jQuery 插件
 
 * 当前版本: 1.0.7
